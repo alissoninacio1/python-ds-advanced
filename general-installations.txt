@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - If you have Python version 3.4 or later, 
     PIP is included by defaul
 
@@ -12,3 +13,19 @@ pip install scipy
 
 pip install seaborn
 
+=======
+- If you have Python version 3.4 or later, 
+    PIP is included by defaul
+
+
+pip install matplotlib
+
+pip install pandas
+
+pip install numpy 
+
+pip install scipy
+
+pip install seaborn
+
+>>>>>>> 3d1dac12a4d9bb88b04a37551c742c6bea320201
