@@ -1,0 +1,14 @@
+- If you have Python version 3.4 or later, 
+    PIP is included by defaul
+
+
+pip install matplotlib
+
+pip install pandas
+
+pip install numpy 
+
+pip install scipy
+
+pip install seaborn
+
