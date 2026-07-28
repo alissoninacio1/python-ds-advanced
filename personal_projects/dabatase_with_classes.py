@@ -2,49 +2,69 @@
 # The standard way to securely collect a password in a terminal application is to use getpass.getpass()
 # If you want the terminal to display asterisks (like ****) instead of remaining completely blank, you can use the third-party package
 # pip install maskpass
+
 from dataclasses import dataclass
 import maskpass
 
+
 @dataclass
 class Member:
-    name: str
-    password: str
+    name:str
+    password:str
 
-class MemberSystem:
+
+class MemberSystem: 
+
     def __init__(self):
         self.db: dict[int, Member] = {}
-        self.current_id: int = 0
+        self.current_id: int = 0 
 
-    def add_user(self, name: str, password: str):
+    def add_user(self, name:str, password:str):
         self.current_id += 1
-        self.db[self.current_id] = Member(name, password)
-        print(f"User added with ID {self.current_id}!")
+        self.db[self.current_id] = Member(name, password) # "In the dictionary [name], with the ID [number], add this object with name and password."
 
-    def del_user(self, id_val: int):
+
+    def del_user(self, id_val:int):
+        """
+        # .pop() removes the key and returns its value, or None if missing
+        # If the key id_val exists, it removes the key-value pair and returns the value.
+        # If the key id_val does not exist, it does not crash; instead, it returns the fallback value None
+        # check if something is Null and not Null: "if x is None" and "if x is not None"
+        """
         if self.db.pop(id_val, None) is not None:
-            print(f"User with ID {id_val} has been removed.")
+            print(f"User with ID {id_val} has been removed")
         else:
             print(f"ID {id_val} not found.")
 
-    def search_user(self, partial_name: str):
+
+    def search_user(self, partial_name:str):
         for key, val in self.db.items():
             if partial_name.lower() in val.name.lower():
                 print(f"-> ID {key}: {val.name}")
+            else: 
+                print("User not found!")
 
-    def update_user(self, id_val: int, new_name: str, new_password: str):
+
+    def update_user(self, id_val:int , new_name: str, new_password: str ):
         user = self.db.get(id_val)
+
+        #if the user exists
+        #if user: is already a valid condition in Python. It relies on truthiness—if self.db.get(id_val) finds a user object, it evaluates to True. 
+        # If it finds nothing, it usually returns None, which evaluates to False
         if user:
             user.name = new_name
             user.password = new_password
             print(f"ID {id_val} updated.")
         else:
             print(f"ID {id_val} not found.")
+        
+            
 
 # ==========================================
 # INTERFACE DO USUÁRIO (MENU)
 # ==========================================
 def main():
-    system = MemberSystem()
+    system = MemberSystem() #object is a class instance
 
     while True:
         print("\n=== SYSTEM MENU ===")
