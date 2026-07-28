@@ -13,4 +13,6 @@ pip install scipy
 
 pip install seaborn
 
-
+pip install mypy
+    - Mypy is an optional static type checker for Python that combines the benefits of dynamic and static typing
+    

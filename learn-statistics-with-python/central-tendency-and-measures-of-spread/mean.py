@@ -33,7 +33,7 @@ print(mean_result)
 #considerations:
 
 # * Use numpy instead of doing the calculation by yourself
-# *numpy allow to use arrays. Arrays must be of the same data type
+# * numpy allow to use arrays. Arrays must be of the same data type
 #  for numerical computing, memory efficiency, fixed size
 
 # *list - dynamic, less memory efficiente, general purpose
