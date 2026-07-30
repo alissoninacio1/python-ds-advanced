@@ -1,0 +1,18 @@
+main()
+
+
+In Python, there is no built-in or required main() function like there is in languages like C++ or Java. Instead, the Python interpreter executes code sequentially, starting directly from the top of the file to bottom. To mimic an official entry point, developers define a custom main() function and invoke it using the conditional block if __name__ == "__main__":. This pattern ensures the code inside main() only runs when the script is executed directly, preventing accidental execution when the file is imported as a module into another script while keeping variables safely scoped. Python’s top-to-bottom execution is exactly like procedural C code written inside a main() function.
+
+
+
+Functions  - when to use return  
+
+Quando a função não tem um return, você não precisa (e nem consegue) usar um if/else no seu main() para avaliar o resultado, porque a função não devolve nenhum dado para ser testado. Toda a tomada de decisão (if/else) e a exibição das mensagens (print()) já foram resolvidas dentro da própria função/método. O seu main() ganha o papel único de "chamar e esquecer" (call and forget). Ele apenas passa os dados e confia que a função vai fazer o trabalho completo
+*(deixar os prints e o if/else dentro de uma função) deixa o fluxo do futuro match-case muito mais enxuto e prazeroso de ler. 
+
+Quando você coloca o return em uma função, você está jogando a responsabilidade de decidir o que fazer de volta para quem chamou a função (o seu main). Isso significa que o main se torna obrigado a criar uma estrutura com if/else ou try/catch para verificar se o retorno foi True, False, None ou um código de erro. Ao remover o return e colocar a lógica de sucesso, erro e mensagens de log dentro da própria função, você blinda o fluxo principal do programa. 
+
+
+
+dataclasses
+Você deve usar dataclasses sempre que precisar de uma classe cujo propósito principal seja armazenar dados, e não executar comportamentos ou lógicas complexas. Você precisa declarar os tipos ao usar dataclasses em Python, pois os campos são identificados por meio de type hints. Se você não colocar o tipo, a biblioteca não vai reconhecer o campo como parte dos dados da classe.
