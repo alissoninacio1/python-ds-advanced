@@ -1,18 +1,30 @@
-main()
-
-
-In Python, there is no built-in or required main() function like there is in languages like C++ or Java. Instead, the Python interpreter executes code sequentially, starting directly from the top of the file to bottom. To mimic an official entry point, developers define a custom main() function and invoke it using the conditional block if __name__ == "__main__":. This pattern ensures the code inside main() only runs when the script is executed directly, preventing accidental execution when the file is imported as a module into another script while keeping variables safely scoped. Python’s top-to-bottom execution is exactly like procedural C code written inside a main() function.
-
-
-
-Functions  - when to use return  
-
-Quando a função não tem um return, você não precisa (e nem consegue) usar um if/else no seu main() para avaliar o resultado, porque a função não devolve nenhum dado para ser testado. Toda a tomada de decisão (if/else) e a exibição das mensagens (print()) já foram resolvidas dentro da própria função/método. O seu main() ganha o papel único de "chamar e esquecer" (call and forget). Ele apenas passa os dados e confia que a função vai fazer o trabalho completo
-*(deixar os prints e o if/else dentro de uma função) deixa o fluxo do futuro match-case muito mais enxuto e prazeroso de ler. 
-
-Quando você coloca o return em uma função, você está jogando a responsabilidade de decidir o que fazer de volta para quem chamou a função (o seu main). Isso significa que o main se torna obrigado a criar uma estrutura com if/else ou try/catch para verificar se o retorno foi True, False, None ou um código de erro. Ao remover o return e colocar a lógica de sucesso, erro e mensagens de log dentro da própria função, você blinda o fluxo principal do programa. 
+1 - main()
+    In Python, there is no built-in or required main() function like there is in languages like C++ or Java. 
+    Instead, the Python interpreter executes code sequentially, starting directly from the top of the file to bottom. To mimic an official entry point, developers define a custom main() function and invoke it using the conditional block if __name__ == "__main__":. 
+    This pattern ensures the code inside main() only runs when the script is executed directly, preventing accidental execution when the file is imported as a module into another script while keeping variables safely scoped. Python’s top-to-bottom execution is exactly like procedural C code written inside a main() function.
 
 
 
-dataclasses
-Você deve usar dataclasses sempre que precisar de uma classe cujo propósito principal seja armazenar dados, e não executar comportamentos ou lógicas complexas. Você precisa declarar os tipos ao usar dataclasses em Python, pois os campos são identificados por meio de type hints. Se você não colocar o tipo, a biblioteca não vai reconhecer o campo como parte dos dados da classe.
+2 - Functions  - when to use return  
+
+    Quando a função não tem um return, você não precisa (e nem consegue) usar um if/else no seu main() para avaliar o resultado, porque a função não devolve nenhum dado para ser testado. Toda a tomada de decisão (if/else) e a exibição das mensagens (print()) já foram resolvidas dentro da própria função/método. O seu main() ganha o papel único de "chamar e esquecer" (call and forget). Ele apenas passa os dados e confia que a função vai fazer o trabalho completo
+    (deixar os prints e o if/else dentro de uma função) deixa o fluxo do futuro match-case muito mais enxuto e prazeroso de ler. 
+    Quando você coloca o return em uma função, você está jogando a responsabilidade de decidir o que fazer de volta para quem chamou a função (o seu main). Isso significa que o main se torna obrigado a criar uma estrutura com if/else ou try/catch para verificar se o retorno foi True, False, None ou um código de erro. Ao remover o return e colocar a lógica de sucesso, erro e mensagens de log dentro da própria função, você blinda o fluxo principal do programa. 
+
+
+
+3 - dataclasses
+    Você deve usar dataclasses sempre que precisar de uma classe cujo propósito principal seja armazenar dados, e não executar comportamentos ou lógicas complexas. Você precisa declarar os tipos ao usar dataclasses em Python, pois os campos são identificados por meio de type hints. Se você não colocar o tipo, a biblioteca não vai reconhecer o campo como parte dos dados da classe.
+
+
+
+4 - sedd/random
+    Behind the scenes, Python’s standard random library utilizes an identical C implementation of a wold-famous algorithm called the Mersenne Twister (specifically, the MT19937 variant).
+    Rather than executing a single basic mathematical equation, the algorithm systematically relies on an internal State Array of 624 integers (each 32 bits long) and processes random generation across three distinct architectural phases
+    # ***The seed is the starting value: It is the initial number fed into the computer's mathematical equation to kick off the calculations.
+    # ***Changing the seed changes the output: If you switch from random.seed(42) to random.seed(99), you plug a new number into the equation, which completely changes the resulting sequence of numbers.
+    # ***randint is just the range: random.randint(a, b) simply sets the boundaries (the minimum and maximum allowed limits) for the number that the math equation spits out.
+
+
+5 - 
+
