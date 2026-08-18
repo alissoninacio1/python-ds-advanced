@@ -18,7 +18,7 @@
 
 
 
-4 - sedd/random
+4 - seed/random
     Behind the scenes, Python’s standard random library utilizes an identical C implementation of a wold-famous algorithm called the Mersenne Twister (specifically, the MT19937 variant).
     Rather than executing a single basic mathematical equation, the algorithm systematically relies on an internal State Array of 624 integers (each 32 bits long) and processes random generation across three distinct architectural phases
     # ***The seed is the starting value: It is the initial number fed into the computer's mathematical equation to kick off the calculations.
