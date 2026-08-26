@@ -4,4 +4,4 @@ x, y, z = my_list
 
 print(x, y, z)
 
-#this is like destructuring in kotlin, you can unpacking values of a list or tuple
+#this is like destructuring in kotlin/js, you can unpacking values of a list or tuple
