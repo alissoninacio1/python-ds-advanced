@@ -1,7 +1,7 @@
 1 - main()
     In Python, there is no built-in or required main() function like there is in languages like C++ or Java. 
     Instead, the Python interpreter executes code sequentially, starting directly from the top of the file to bottom. To mimic an official entry point, developers define a custom main() function and invoke it using the conditional block if __name__ == "__main__":. 
-    This pattern ensures the code inside main() only runs when the script is executed directly, preventing accidental execution when the file is imported as a module into another script while keeping variables safely scoped. Python’s top-to-bottom execution is exactly like procedural C code written inside a main() function.
+    This pattern ensures the code inside main() only runs when the script is executed directly, preventing accidental execution when the file is imported as a module into another script while keeping variables safely scoped (preventing execution twice). Python’s top-to-bottom execution is exactly like procedural C code written inside a main() function.
 
 
 
