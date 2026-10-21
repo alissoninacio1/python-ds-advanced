@@ -1,0 +1,17 @@
+Skew
+Once you have the center and range of your data, you can begin to describe its shape. 
+The skew of a dataset is a description of the data’s symmetry.
+A dataset with one prominent peak, and similar tails to the left and right is called symmetric. 
+The median and mean of a symmetric dataset are similar.
+
+
+Modality
+The modality describes the number of peaks (Picos: pt-BR) in a dataset. Thus far, we have only looked at datasets with one distinct peak, known as unimodal. This is the most common.
+A bimodal dataset has two distinct peaks. 
+A multimodal dataset has more than two peaks. The histogram below displays three peaks.
+
+
+
+Outliers
+An outlier is a data point that is far away from the rest of the dataset. Outliers do not have a formal definition, but are easy to determine by looking at histogram. An outlier is a value that is much higher or lower than the other values in the dataset. In a histogram, it appears as a bar that is separated from the rest.
+If you see an outlier in your dataset, it’s worth reporting and investigating. This data can often indicate an error in your data or an interesting insight. 
